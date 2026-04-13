@@ -34,7 +34,7 @@ const Navbar = () => (
         <a href="#about" className="hover:text-olive transition-colors">About</a>
         <a href="#training" className="hover:text-olive transition-colors">Training</a>
         <a href="#registration" className="hover:text-olive transition-colors">Registration</a>
-        <a href="#contact" className="px-5 py-2 bg-olive text-cream rounded-full hover:bg-olive-light transition-all shadow-sm">
+        <a href="https://forms.gle/7G77zrUhMwAvoFZLA" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-olive text-cream rounded-full hover:bg-olive-light transition-all shadow-sm">
           Register Now
         </a>
       </div>
@@ -62,7 +62,7 @@ const Hero = () => (
           Understanding Behavior; Teaching Daily Lifeskills with Confidence for Autistic Children ages 2-8 years.
         </p>
         <div className="flex flex-wrap gap-4">
-          <a href="#registration" className="px-8 py-4 bg-olive text-cream rounded-full font-medium hover:bg-olive-light transition-all shadow-lg flex items-center gap-2">
+          <a href="https://forms.gle/7G77zrUhMwAvoFZLA" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-olive text-cream rounded-full font-medium hover:bg-olive-light transition-all shadow-lg flex items-center gap-2">
             Secure Your Spot <ChevronRight size={18} />
           </a>
           <a href="#about" className="px-8 py-4 border border-olive/20 text-olive rounded-full font-medium hover:bg-olive/5 transition-all">
@@ -78,10 +78,9 @@ const Hero = () => (
       >
         <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl">
           <img 
-            src="https://images.unsplash.com/photo-1587653263995-422546a72569?auto=format&fit=crop&q=80&w=1000" 
+            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=1000" 
             alt="Parent and child learning" 
             className="w-full h-[600px] object-cover"
-            referrerPolicy="no-referrer"
           />
         </div>
         <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-olive/10 rounded-full blur-3xl -z-10" />
@@ -257,9 +256,9 @@ const Registration = () => (
               <p className="text-sm text-olive/70 leading-relaxed italic">
                 "To register, please make the payment to the till number above and send the confirmation message to our contact."
               </p>
-              <button className="w-full py-4 bg-olive text-cream rounded-full font-bold hover:bg-olive-light transition-all shadow-lg">
+              <a href="https://forms.gle/7G77zrUhMwAvoFZLA" target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-olive text-cream rounded-full font-bold hover:bg-olive-light transition-all shadow-lg text-center">
                 Confirm Registration
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -274,10 +273,9 @@ const About = () => (
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <img 
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
+            src="https://raw.githubusercontent.com/MMuendo/joy-muriuki/main/src/assets/joy-muriuki.jpg" 
             alt="Joy Muriuki" 
             className="rounded-[40px] w-full h-[500px] object-cover shadow-xl"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute -bottom-6 -right-6 bg-cream p-6 rounded-3xl shadow-lg border border-olive/5">
             <p className="text-olive font-serif text-xl italic">"Empowering families through understanding."</p>
