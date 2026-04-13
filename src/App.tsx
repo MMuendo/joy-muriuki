@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { 
   Calendar, 
@@ -18,29 +18,63 @@ import {
   Heart,
   Baby,
   Brain,
-  Sparkles
+  Sparkles,
+  Menu,
+  X
 } from 'lucide-react';
 
-const Navbar = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-bg/80 backdrop-blur-md border-b border-olive/10">
-    <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <div className="w-10 h-10 bg-olive rounded-full flex items-center justify-center text-cream">
-          <Heart size={20} />
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-bg/80 backdrop-blur-md border-b border-olive/10">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-olive rounded-full flex items-center justify-center text-cream">
+            <Heart size={20} />
+          </div>
+          <span className="font-serif text-xl font-semibold tracking-tight text-olive">Joy Muriuki</span>
         </div>
-        <span className="font-serif text-xl font-semibold tracking-tight text-olive">Joy Muriuki</span>
+        
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-olive/80">
+          <a href="#about" className="hover:text-olive transition-colors">About</a>
+          <a href="#training" className="hover:text-olive transition-colors">Training</a>
+          <a href="#registration" className="hover:text-olive transition-colors">Registration</a>
+          <a href="https://forms.gle/7G77zrUhMwAvoFZLA" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-olive text-cream rounded-full hover:bg-olive-light transition-all shadow-sm">
+            Register Now
+          </a>
+        </div>
+        
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden w-10 h-10 flex items-center justify-center text-olive"
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium text-olive/80">
-        <a href="#about" className="hover:text-olive transition-colors">About</a>
-        <a href="#training" className="hover:text-olive transition-colors">Training</a>
-        <a href="#registration" className="hover:text-olive transition-colors">Registration</a>
-        <a href="https://forms.gle/7G77zrUhMwAvoFZLA" target="_blank" rel="noopener noreferrer" className="px-5 py-2 bg-olive text-cream rounded-full hover:bg-olive-light transition-all shadow-sm">
-          Register Now
-        </a>
-      </div>
-    </div>
-  </nav>
-);
+      
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden bg-warm-bg border-t border-olive/10"
+        >
+          <div className="px-6 py-4 flex flex-col gap-4">
+            <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-olive/80 hover:text-olive transition-colors py-2">About</a>
+            <a href="#training" onClick={() => setIsMenuOpen(false)} className="text-olive/80 hover:text-olive transition-colors py-2">Training</a>
+            <a href="#registration" onClick={() => setIsMenuOpen(false)} className="text-olive/80 hover:text-olive transition-colors py-2">Registration</a>
+            <a href="https://forms.gle/7G77zrUhMwAvoFZLA" target="_blank" rel="noopener noreferrer" className="px-5 py-3 bg-olive text-cream rounded-full hover:bg-olive-light transition-all shadow-sm text-center">
+              Register Now
+            </a>
+          </div>
+        </motion.div>
+      )}
+    </nav>
+  );
+};
 
 const Hero = () => (
   <section className="pt-32 pb-20 px-6">
