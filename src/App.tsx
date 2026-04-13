@@ -273,7 +273,7 @@ const About = () => (
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <img 
-            src="https://raw.githubusercontent.com/MMuendo/joy-muriuki/main/src/assets/joy-muriuki.jpg" 
+            src="https://raw.githubusercontent.com/MMuendo/joy-muriuki/main/src/assets/joy-muriuki.png" 
             alt="Joy Muriuki" 
             className="rounded-[40px] w-full h-[500px] object-cover shadow-xl"
           />
